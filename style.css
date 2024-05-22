@@ -22,7 +22,7 @@ html{
 body{
     background-color: var(--background);
 }
-h1,h2,h3,h4,h5,h6,a,p,b,button{
+h1,h2,h3,h4,h5,h6,a,p,b,button,input{
     color: var(--detail);
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
@@ -49,7 +49,7 @@ header{
     background: linear-gradient(to right, #3EADCF 0%, #ABE9CD 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    font-size: 36px;
+    font-size: 2.2rem;
     
 }
 nav{
@@ -70,7 +70,7 @@ nav{
     justify-content: center;
     align-items: center;
     border-bottom: 4px solid #3EADCF;
-    transition: 0.2s;
+    transition: 0.2s ease-in-out;
 }
 .page-link:first-child{
     background-image: linear-gradient(to right, #3EADCF 0%, #ABE9CD 100%);
@@ -89,7 +89,19 @@ nav{
 .main-header{
     display: flex;
     justify-content: space-between;
-    padding: 20px;
+    padding: 22px;
+}
+#add-plus-sign{
+    width: 16px;
+    height: 16px;
+}
+#add-template-btn{
+    font-size: 16px;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    align-items: center;
+    gap: 1rem;
 }
 button{
     border: none;
@@ -97,17 +109,17 @@ button{
     font-weight: bold;
     cursor: pointer;
 }
-.template-container{
+#template-container{
     min-height: 40rem;
     display: grid;
     grid-template-columns: auto auto auto auto auto;
-    justify-content: center;
+    justify-content:center;
 }
 .template{
     display: flex;
     flex-direction: column;
-    border: 4px solid;
-    border-image: linear-gradient(to right, #3eadcf 0%, #ABE9CD 100%) 1;
+    border: 4px solid #3eadcf;
+    border-radius: 10px;
     background-color: var(--background);
     width: 15rem;
     height: 30rem;
@@ -117,13 +129,15 @@ button{
     cursor: pointer;
     overflow: hidden;
     transition: 0.3s;
+    position: relative;
 }
-.template-container:hover > .template{
-    opacity: 0.6;
+#template-container:hover > .template{
+    opacity: 0.4;
 }
-.template-container:hover > .template:hover{
+#template-container:hover > .template:hover{
     opacity: 1;
     transform: scale(1.05);
+    
 }
 .template-header{
     display: flex;
@@ -133,10 +147,16 @@ button{
 .template-header{
     font-weight: bold;
 }
-.burger-menu{
-    transition: 0.2s;
+.editable{
+    max-width: 10rem;
+    overflow-x: hidden;
 }
-.burger-menu:hover{
+.rename-option{
+    transition: 0.2s;
+    width: 2rem;
+    height: 2rem;
+}
+.rename-option:hover{
     filter: brightness(1.4);
 }
 .template-body{
@@ -144,6 +164,37 @@ button{
 }
 .template-body p {
     padding: 5px;
+}
+.template-exercise{
+    display: flex;
+    justify-content: space-around;
+}
+.template-exercise img{
+    transition: 0.1s ease-in-out;
+}
+.template-exercise:hover img {
+  transform: scale(1.2);
+  filter: brightness(1.4);
+}
+.add-exercise-btn{
+    position: absolute;
+    left: 43%;
+    transition: 0.2s;
+}
+.add-exercise-btn:hover{
+    filter: brightness(1.4);
+}
+.rename-input{
+    position: absolute;
+    top:1rem;
+    left: 0;
+    width: 100%;
+    height: 1.5rem;
+    border: none;
+    outline: none;
+    background-color: var(--background);
+    font-weight: bold;
+    padding-left: 10px;
 }
 #background-pattern{
     height: 100vh;
